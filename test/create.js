@@ -19,8 +19,8 @@ describe("Provider", function() {
     server.close(done);
   });
 
-  it("accepts host and port", function(done) {
-    var provider = Provider.create({host: "0.0.0.0", port: port});
+  it("accepts schema, host and port", function(done) {
+    var provider = Provider.create({schema: 'http', host: "0.0.0.0", port: port});
     assert(provider);
 
     Provider.test_connection(provider, function(error, coinbase) {
