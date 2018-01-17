@@ -15,7 +15,7 @@ module.exports = {
     } else if (options.provider) {
       provider = options.provider;
     } else {
-      provider = new Web3.providers.HttpProvider("http://" + options.host + ":" + options.port);
+      provider = new Web3.providers.HttpProvider((options.schema || "http") + "://" + options.host + ":" + options.port);
     }
 
     return this.wrap(provider, options);
